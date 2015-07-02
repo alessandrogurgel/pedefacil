@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="friends_contentprovider_authority">org.michenux.yourappidea.friends</string>
+
+    <string name="no_friends">No friends</string>
+    <string name="friend_name_label">Name :</string>
+    <string name="friend_job_label">Job :</string>
+
+    <string name="friends_info_title">Info</string>
+    <string-array name="friends_info_details">
+        <item>- List/detail screen.</item>
+        <item>- In portrait orientation, detail is displayed above the list.</item>
+        <item>- In landscape orientation, the screen is divided in two columns, one for the list, one for detail.</item>
+        <item>- On rotation, the state of the screen is preserved.</item>
+
+        <item>- Fragments.</item>
+        <item>- ContentProvider for data.</item>
+     </string-array>
+
+</resources>

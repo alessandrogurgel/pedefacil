@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="tutorials_contentprovider_authority">org.michenux.yourappidea.tutorials</string>
+    <string name="tutorials_accountType">michenux.net</string>
+
+    <string name="tutorial_sync_url">"http://www.michenux.net/?json=get_recent_posts&amp;count=1"</string>
+    <string name="tutorial_notification_title">New android tutorial</string>
+
+    <string name="tutorial_info_title">Info</string>
+    <string-array name="tutorial_info_details">
+        <item>- Retrieve posts from a wordpress website.</item>
+        <item>- Check every day for new posts and notify the user.</item>
+        <item>- Works in offline mode : posts stored in local database.</item>
+        <item>- Pull down to refresh the list.</item>
+
+        <item>- RecyclerView with twowayview library.</item>
+        <item>- SyncAdapter is used to retrieve the new posts.</item>
+        <item>- Volley and Gson libraries are used to query the json feed of wordpress.</item>
+        <item>- ContentProvider/CursorLoader/LoaderManager are used to load the posts from the database.</item>
+        <item>- SwipeRefreshLayout (android support) to refresh the list by swiping down.</item>
+        <item>- Crouton library to display errors.</item>
+    </string-array>
+
+</resources>

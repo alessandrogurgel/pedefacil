@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="8dp"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/aroundme_cardview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="3dp"
+        card_view:cardCornerRadius="4dp"
+        card_view:cardElevation="3dp">
+
+        <RelativeLayout
+            android:orientation="vertical" android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp">
+
+            <ImageView
+                android:id="@+id/aroundme_placeimage"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:layout_width="120dp"
+                android:layout_height="80dp"
+                android:layout_marginRight="10dp"/>
+
+            <TextView
+                android:id="@+id/aroundme_placename"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/aroundme_placeimage"
+                android:gravity="center_vertical"
+                android:textIsSelectable="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Title"
+                tools:text="Place">
+            </TextView>
+
+            <TextView
+                android:id="@+id/aroundme_placecountry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/aroundme_placeimage"
+                android:layout_below="@id/aroundme_placename"
+                android:gravity="right|center_vertical"
+                android:textIsSelectable="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                tools:text="country">
+            </TextView>
+
+            <TextView
+                android:id="@+id/aroundme_placedistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/aroundme_placecountry"
+                android:layout_marginRight="10px"
+                android:layout_toLeftOf="@id/aroundme_placename"
+                android:gravity="center_vertical"
+                android:textColor="?attr/colorAccent"
+                android:textIsSelectable="true"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                android:layout_alignParentRight="true"
+                tools:text="distance">
+            </TextView>
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>
