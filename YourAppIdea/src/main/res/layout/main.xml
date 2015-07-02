@@ -19,13 +19,7 @@
             android:layout_weight="1"
             android:layout_height="0dp"/>
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            ads:adSize="SMART_BANNER"
-            ads:adUnitId="a150d852e9f388f"/>
+
 
     </LinearLayout>
 

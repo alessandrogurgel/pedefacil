@@ -42,6 +42,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         Button button4 = (Button) mainView.findViewById(R.id.mainmenu_button4);
         button4.setOnClickListener(this);
 
+        Button next = (Button) mainView.findViewById(R.id.mainmenu_button5);
+        next.setOnClickListener(this);
+
         return mainView;
     }
 
@@ -70,6 +73,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
             case R.id.mainmenu_button4:
                 fragment.selectItem(5, false);
                 break;
+            case R.id.mainmenu_button5:
+                System.out.println("apertei botao next");
+
         }
     }
 }

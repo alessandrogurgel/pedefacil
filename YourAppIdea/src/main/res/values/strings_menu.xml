@@ -6,5 +6,6 @@
     <string name="mainmenu_button2">Airport (Volley)</string>
     <string name="mainmenu_button3">Simple Map</string>
     <string name="mainmenu_button4">Around me</string>
+    <string name="mainmenu_button5">Avançar</string>
 
 </resources>

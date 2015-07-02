@@ -100,6 +100,25 @@
                 android:background="@drawable/button_drawable">
             </Button>
         </com.andexert.library.RippleView>
+
+        <com.andexert.library.RippleView
+            android:id="@+id/mainmenu_button5_ripple"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:rv_color="?attr/colorControlHighlight">
+            <Button
+                android:id="@+id/mainmenu_button5"
+                android:text="@string/mainmenu_button5"
+                android:textColor="@android:color/white"
+                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/button_drawable">
+            </Button>
+        </com.andexert.library.RippleView>
+
+
     </LinearLayout>
 
 </RelativeLayout>

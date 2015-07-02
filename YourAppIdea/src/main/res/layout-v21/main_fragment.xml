@@ -56,6 +56,14 @@
             android:layout_width="match_parent">
         </Button>
 
+        <Button
+            android:id="@+id/mainmenu_button5"
+            android:text="@string/mainmenu_button5"
+            android:textColor="@android:color/white"
+            android:layout_height="50dp"
+            android:layout_width="match_parent">dddd
+        </Button>
+
     </LinearLayout>
 
 </RelativeLayout>

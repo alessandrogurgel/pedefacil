@@ -34,8 +34,6 @@ public class YourAppMainActivity extends ActionBarActivity implements UserSessio
     @Inject
     UserHelper mUserHelper;
 
-    private AdView mAdView ;
-
     private FbLoginDelegate mFbLoginDelegate;
 
     private GoogleApiClientDelegate mGoogleApiClientDlg;
@@ -67,16 +65,6 @@ public class YourAppMainActivity extends ActionBarActivity implements UserSessio
             this.navController.goHomeFragment(this);
             this.navController.showWhatsNew(this);
         }
-
-        // ads
-        mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder()
-                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
-                .addTestDevice("1174B15820BDCDE357023377AAF1D72D")
-                .addTestDevice("FB73634EFAFEF29BE7973A97B5543A4D")
-                .addTestDevice("3C4438D5DE2E7086B63C92FC5846F662") //LG Nexus 5
-                .build();
-        mAdView.loadAd(adRequest);
 
         // social networks
         mFbLoginDelegate = new FbLoginDelegate(mUserHelper, this, savedInstanceState);
@@ -134,20 +122,17 @@ public class YourAppMainActivity extends ActionBarActivity implements UserSessio
     @Override
     public void onPause() {
         super.onPause();
-        mAdView.pause();
         mFbLoginDelegate.onPause();
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        mAdView.resume();
         mFbLoginDelegate.onResume();
     }
 
     @Override
     public void onDestroy() {
-        mAdView.destroy();
         super.onDestroy();
         mFbLoginDelegate.onDestroy();
     }
