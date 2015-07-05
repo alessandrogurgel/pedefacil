@@ -22,6 +22,7 @@ import org.michenux.yourappidea.donations.DonateFragment;
 import org.michenux.yourappidea.facebook.FbLoginDelegate;
 import org.michenux.yourappidea.friends.FriendMainFragment;
 import org.michenux.yourappidea.map.SimpleMapFragment;
+import org.michenux.yourappidea.restaurante.RestauranteMainFragment;
 import org.michenux.yourappidea.tutorial.TutorialListFragment;
 
 import java.util.List;
@@ -172,7 +173,7 @@ public class YourAppNavigationFragment extends NavigationDrawerFragment {
                 break;
             case 106:
                 getFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, new AroundMeFragment())
+                        .replace(R.id.content_frame, new RestauranteMainFragment())
                         .commit();
                 break;
             case 201:
