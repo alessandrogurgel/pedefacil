@@ -74,8 +74,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 fragment.selectItem(5, false);
                 break;
             case R.id.mainmenu_button5:
-                System.out.println("apertei botao next");
-
+                fragment.selectItem(6, false);
+                break;
         }
     }
 }
