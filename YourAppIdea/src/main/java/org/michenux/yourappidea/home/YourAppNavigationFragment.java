@@ -84,6 +84,7 @@ public class YourAppNavigationFragment extends NavigationDrawerFragment {
                 .addLabelWithIcon(102, R.string.navdrawer_airport, R.drawable.navdrawer_airport_selector, true, true)
                 .addLabelWithIcon(103, R.string.navdrawer_simplemap, R.drawable.navdrawer_map_selector, true, true)
                 .addLabelWithIcon(105, R.string.navdrawer_aroundme, R.drawable.navdrawer_aroundme_selector, true, true)
+                .addLabelWithIcon(106, R.string.navdrawer_cardapio, R.drawable.navdrawer_cardapio_selector, true, true)
                 .addDivider(199)
                 .addLabelWithIcon(201, R.string.navdrawer_settings, R.drawable.navdrawer_settings_selector, true, true)
                 .addLabelWithIcon(202, R.string.navdrawer_rating, R.drawable.navdrawer_ratings, false, false)
