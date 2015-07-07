@@ -12,4 +12,10 @@
 
     <string name="error_retrievingdata">Error retrieving data</string>
 
+    <string name="cardapio">Cardápio</string>
+    <string name="sugestoes">Sugestões</string>
+    <string name="pedido">Pedido</string>
+    <string name="conta">Conta</string>
+    <string name="ajuda">Ajuda</string>
+
 </resources>
