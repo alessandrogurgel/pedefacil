@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
@@ -17,7 +16,6 @@ import org.michenux.yourappidea.R;
 import org.michenux.yourappidea.YourApplication;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -27,17 +25,6 @@ public class CardapioListFragment extends Fragment implements ItemClickSupport.O
 {
     private CardapioAdapter mCardapioAdapter;
 
-    private List<Cardapio> getCardapioList()
-    {
-        List<Cardapio> cardapioList = new ArrayList<Cardapio>();
-
-        Cardapio c1 = new Cardapio("Lagosta", "Comida", 22.30, "lagota.png");
-
-        cardapioList.add(c1);
-
-        return cardapioList;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +32,7 @@ public class CardapioListFragment extends Fragment implements ItemClickSupport.O
         if (BuildConfig.DEBUG) {
             Log.i(YourApplication.LOG_TAG, "CardapioListFragment.onCreate");
         }
-        mCardapioAdapter = new CardapioAdapter(this.getActivity(), getCardapioList());
+        mCardapioAdapter = new CardapioAdapter(this.getActivity(), CardapioContentProvider.getInstance().getCardapio());
     }
 
     @Override

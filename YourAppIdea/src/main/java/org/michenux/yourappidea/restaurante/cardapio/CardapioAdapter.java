@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.michenux.drodrolib.resources.ResourceUtils;
 import org.michenux.yourappidea.R;
 
 import java.util.List;
@@ -15,38 +16,39 @@ import java.util.List;
 /**
  * Created by alessandro.gurgel on 7/6/15.
  */
-public class CardapioAdapter extends ArrayAdapter<Cardapio> {
+public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
 
 
-    public CardapioAdapter(Context context, List<Cardapio> cardapioItems) {
+    public CardapioAdapter(Context context, List<CardapioItem> cardapioItems) {
         super(context, 0, cardapioItems);
     }
 
-    private void setCardapioItemView(Cardapio cardapio, View itemView)
+    private void setCardapioItemView(CardapioItem cardapioItem, View itemView)
     {
         ImageView picture = (ImageView) itemView.findViewById(R.id.cardapio_item_picture);
         TextView name = (TextView) itemView.findViewById(R.id.cardapio_item_name);
         TextView category = (TextView) itemView.findViewById(R.id.cardapio_item_category);
         TextView price = (TextView) itemView.findViewById(R.id.cardapio_item_price);
 
-        picture.setImageResource(R.drawable.airport_landing);
+        picture.setImageDrawable(ResourceUtils.getDrawableByName(
+                cardapioItem.getImageName(), this.getContext()));
 
-        name.setText(cardapio.getName());
-        category.setText(cardapio.getCategoy());
-        price.setText(String.format("R$ %s", Double.toString(cardapio.getPrice())));
+        name.setText(cardapioItem.getName());
+        category.setText(cardapioItem.getCategoy());
+        price.setText(String.format("R$ %s", Double.toString(cardapioItem.getPrice())));
     }
 
     @Override
     public View getView(int position, View itemView, ViewGroup parent)
     {
-        Cardapio cardapio = getItem(position);
+        CardapioItem cardapioItem = getItem(position);
 
         if (itemView == null ){
             LayoutInflater inflater = LayoutInflater.from(parent.getContext());
             itemView = inflater.inflate(R.layout.cardapio_list_item, null);
         }
 
-        setCardapioItemView(cardapio, itemView);
+        setCardapioItemView(cardapioItem, itemView);
         return itemView;
     }
 }

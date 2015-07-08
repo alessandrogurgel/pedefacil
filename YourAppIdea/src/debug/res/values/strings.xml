@@ -3,7 +3,7 @@
     <string name="app_name">Pede Fácil</string>
     <string name="app_id">1592621560969472</string>
 
-    <string name="cardapio">Cardápio</string>
+    <string name="cardapioItem">Cardápio</string>
     <string name="sugestoes">Sugestões</string>
     <string name="pedido">Pedido</string>
     <string name="conta">Conta</string>
