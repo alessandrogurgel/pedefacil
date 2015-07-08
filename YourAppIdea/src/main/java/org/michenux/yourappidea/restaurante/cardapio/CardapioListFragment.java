@@ -56,10 +56,6 @@ public class CardapioListFragment extends Fragment implements ItemClickSupport.O
 
         ListView listView = (ListView) view.findViewById(R.id.cardapio_recyclerview);
 
-//        List<String> mObjects = new ArrayList<String>(Arrays.asList("1","2","3"));
-//        ArrayAdapter<String> mAdapter = new ArrayAdapter<>(getActivity(), R.layout.listview_row, mObjects);
-//        listView.setAdapter(mAdapter);
-
         listView.setAdapter(mCardapioAdapter);
         return view;
 

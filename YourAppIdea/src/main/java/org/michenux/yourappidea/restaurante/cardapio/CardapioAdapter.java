@@ -33,7 +33,7 @@ public class CardapioAdapter extends ArrayAdapter<Cardapio> {
 
         name.setText(cardapio.getName());
         category.setText(cardapio.getCategoy());
-        price.setText(Double.toString(cardapio.getPrice()));
+        price.setText(String.format("R$ %s", Double.toString(cardapio.getPrice())));
     }
 
     @Override
