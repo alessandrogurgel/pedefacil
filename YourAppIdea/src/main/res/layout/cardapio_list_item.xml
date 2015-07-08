@@ -64,7 +64,7 @@
                 android:id="@+id/cardapio_item_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/aroundme_placecountry"
+                android:layout_below="@id/cardapio_item_category"
                 android:layout_marginRight="10px"
                 android:layout_toLeftOf="@id/aroundme_placename"
                 android:gravity="center_vertical"
@@ -74,6 +74,7 @@
                 android:layout_alignParentRight="true"
                 tools:text="distance">
             </TextView>
+
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>
