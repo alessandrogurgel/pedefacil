@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "org.michenux.yourappidea"
-        minSdkVersion 10
+        minSdkVersion 11
         targetSdkVersion 22
         versionCode 210
         versionName "2.1.0"

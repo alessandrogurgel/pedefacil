@@ -1,6 +1,10 @@
 package org.michenux.yourappidea.restaurante.cardapio;
 
 import android.content.Context;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +14,9 @@ import android.widget.TextView;
 
 import org.michenux.drodrolib.resources.ResourceUtils;
 import org.michenux.yourappidea.R;
+import org.michenux.yourappidea.aroundme.AroundMeFragment;
+import org.michenux.yourappidea.friends.FriendListFragment;
+import org.michenux.yourappidea.restaurante.MainFragment;
 
 import java.util.List;
 
@@ -18,9 +25,12 @@ import java.util.List;
  */
 public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
 
+    private Fragment fg;
 
-    public CardapioAdapter(Context context, List<CardapioItem> cardapioItems) {
+    public CardapioAdapter(Context context, List<CardapioItem> cardapioItems, Fragment fg) {
         super(context, 0, cardapioItems);
+
+        this.fg = fg;
     }
 
     private void setCardapioItemView(CardapioItem cardapioItem, View itemView)
@@ -41,7 +51,7 @@ public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
     @Override
     public View getView(int position, View itemView, ViewGroup parent)
     {
-        CardapioItem cardapioItem = getItem(position);
+        final CardapioItem cardapioItem = getItem(position);
 
         if (itemView == null ){
             LayoutInflater inflater = LayoutInflater.from(parent.getContext());
@@ -49,6 +59,21 @@ public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
         }
 
         setCardapioItemView(cardapioItem, itemView);
+
+        Context context = getContext();
+
+        final FragmentManager manager = fg.getParentFragment().getChildFragmentManager();
+//        final FragmentManager manager =((FragmentActivity)context).getSupportFragmentManager();
+
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                FragmentTransaction transaction = manager.beginTransaction();
+//                transaction.replace(R.id.cardapio_content_frame, new FriendListFragment());
+//                transaction.commit();
+            }
+        });
+
         return itemView;
     }
 }

@@ -2,7 +2,6 @@ package org.michenux.yourappidea.restaurante.cardapio;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 
-import org.lucasr.twowayview.ItemClickSupport;
 import org.michenux.yourappidea.BuildConfig;
 import org.michenux.yourappidea.R;
 import org.michenux.yourappidea.YourApplication;
@@ -21,7 +19,7 @@ import java.util.List;
 /**
  * Created by alessandro.gurgel on 7/5/15.
  */
-public class CardapioListFragment extends Fragment implements ItemClickSupport.OnItemClickListener
+public class CardapioFragment extends Fragment
 {
     private CardapioAdapter mCardapioAdapter;
 
@@ -30,9 +28,9 @@ public class CardapioListFragment extends Fragment implements ItemClickSupport.O
         super.onCreate(savedInstanceState);
 
         if (BuildConfig.DEBUG) {
-            Log.i(YourApplication.LOG_TAG, "CardapioListFragment.onCreate");
+            Log.i(YourApplication.LOG_TAG, "CardapioFragment.onCreate");
         }
-        mCardapioAdapter = new CardapioAdapter(this.getActivity(), CardapioContentProvider.getInstance().getCardapio());
+        mCardapioAdapter = new CardapioAdapter(this.getActivity(), CardapioContentProvider.getInstance().getCardapio(), this);
     }
 
     @Override
@@ -48,9 +46,4 @@ public class CardapioListFragment extends Fragment implements ItemClickSupport.O
 
     }
 
-    @Override
-    public void onItemClick(RecyclerView recyclerView, View view, int i, long l)
-    {
-
-    }
 }
