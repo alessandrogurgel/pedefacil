@@ -27,22 +27,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         View mainView = inflater
                 .inflate(R.layout.main_fragment, container, false);
 
-        Button button0 = (Button) mainView.findViewById(R.id.mainmenu_button0);
-        button0.setOnClickListener(this);
+        Button table = (Button) mainView.findViewById(R.id.mainmenu_button5);
+        table.setOnClickListener(this);
 
-        Button button1 = (Button) mainView.findViewById(R.id.mainmenu_button1);
-        button1.setOnClickListener(this);
-
-        Button button2 = (Button) mainView.findViewById(R.id.mainmenu_button2);
-        button2.setOnClickListener(this);
-
-        Button button3 = (Button) mainView.findViewById(R.id.mainmenu_button3);
-        button3.setOnClickListener(this);
-
-        Button button4 = (Button) mainView.findViewById(R.id.mainmenu_button4);
-        button4.setOnClickListener(this);
-
-        Button next = (Button) mainView.findViewById(R.id.mainmenu_button5);
+        Button next = (Button) mainView.findViewById(R.id.mainmenu_button6);
         next.setOnClickListener(this);
 
         return mainView;
@@ -58,22 +46,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
         NavigationDrawerFragment fragment = ((YourAppMainActivity)this.getActivity()).findNavDrawerFragment();
         switch (v.getId()) {
-            case R.id.mainmenu_button0:
-                fragment.selectItem(1, false);
-                break;
-            case R.id.mainmenu_button1:
-                fragment.selectItem(2, false);
-                break;
-            case R.id.mainmenu_button2:
-                fragment.selectItem(3, false);
-                break;
-            case R.id.mainmenu_button3:
-                fragment.selectItem(4, false);
-                break;
-            case R.id.mainmenu_button4:
-                fragment.selectItem(5, false);
-                break;
-            case R.id.mainmenu_button5:
+            case R.id.mainmenu_button6:
                 fragment.selectItem(6, false);
                 break;
         }

@@ -17,91 +17,6 @@
         android:gravity="center_vertical|center_horizontal">
 
         <com.andexert.library.RippleView
-            android:id="@+id/mainmenu_button0_ripple"
-            android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:rv_color="?attr/colorControlHighlight">
-            <Button
-                android:id="@+id/mainmenu_button0"
-                android:text="@string/mainmenu_button0"
-                android:textColor="@android:color/white"
-                android:layout_height="50dp"
-                android:layout_width="match_parent"
-                android:background="@drawable/button_drawable">
-            </Button>
-        </com.andexert.library.RippleView>
-
-        <com.andexert.library.RippleView
-            android:id="@+id/mainmenu_button1_ripple"
-            android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:rv_color="?attr/colorControlHighlight">
-            <Button
-                android:id="@+id/mainmenu_button1"
-                android:text="@string/mainmenu_button1"
-                android:textColor="@android:color/white"
-                android:layout_height="50dp"
-                android:layout_width="match_parent"
-                android:background="@drawable/button_drawable">
-            </Button>
-        </com.andexert.library.RippleView>
-
-        <com.andexert.library.RippleView
-            android:id="@+id/mainmenu_button2_ripple"
-            android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:rv_color="?attr/colorControlHighlight">
-            <Button
-                android:id="@+id/mainmenu_button2"
-                android:text="@string/mainmenu_button2"
-                android:textColor="@android:color/white"
-                android:layout_height="50dp"
-                android:layout_width="match_parent"
-                android:background="@drawable/button_drawable">
-            </Button>
-        </com.andexert.library.RippleView>
-
-        <com.andexert.library.RippleView
-            android:id="@+id/mainmenu_button3_ripple"
-            android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:rv_color="?attr/colorControlHighlight">
-            <Button
-                    android:id="@+id/mainmenu_button3"
-                    android:text="@string/mainmenu_button3"
-                    android:textColor="@android:color/white"
-                android:layout_height="50dp"
-                    android:layout_width="match_parent"
-                android:background="@drawable/button_drawable">
-            </Button>
-        </com.andexert.library.RippleView>
-
-        <com.andexert.library.RippleView
-            android:id="@+id/mainmenu_button4_ripple"
-            android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            app:rv_color="?attr/colorControlHighlight">
-            <Button
-                android:id="@+id/mainmenu_button4"
-                android:text="@string/mainmenu_button4"
-                android:textColor="@android:color/white"
-                android:layout_height="50dp"
-                android:layout_width="match_parent"
-                android:background="@drawable/button_drawable">
-            </Button>
-        </com.andexert.library.RippleView>
-
-        <com.andexert.library.RippleView
             android:id="@+id/mainmenu_button5_ripple"
             android:layout_centerHorizontal="true"
             android:layout_width="match_parent"
@@ -110,6 +25,23 @@
             app:rv_color="?attr/colorControlHighlight">
             <Button
                 android:id="@+id/mainmenu_button5"
+                android:text="@string/mainmenu_button5"
+                android:textColor="@android:color/white"
+                android:layout_height="50dp"
+                android:layout_width="match_parent"
+                android:background="@drawable/button_drawable">
+            </Button>
+        </com.andexert.library.RippleView>
+
+        <com.andexert.library.RippleView
+            android:id="@+id/mainmenu_button6_ripple"
+            android:layout_centerHorizontal="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:rv_color="?attr/colorControlHighlight">
+            <Button
+                android:id="@+id/mainmenu_button6"
                 android:text="@string/mainmenu_button5"
                 android:textColor="@android:color/white"
                 android:layout_height="50dp"

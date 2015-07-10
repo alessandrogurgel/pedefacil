@@ -16,49 +16,16 @@
         android:gravity="center_vertical|center_horizontal">
 
         <Button
-            android:layout_centerHorizontal="true"
-            android:id="@+id/mainmenu_button0"
-            android:text="@string/mainmenu_button0"
-            android:textColor="@android:color/white"
-            android:layout_height="50dp"
-            android:layout_width="match_parent">
-        </Button>
-
-        <Button
-            android:id="@+id/mainmenu_button1"
-            android:text="@string/mainmenu_button1"
-            android:textColor="@android:color/white"
-            android:layout_height="50dp"
-            android:layout_width="match_parent">
-        </Button>
-
-        <Button
-            android:id="@+id/mainmenu_button2"
-            android:text="@string/mainmenu_button2"
-            android:textColor="@android:color/white"
-            android:layout_height="50dp"
-            android:layout_width="match_parent">
-        </Button>
-
-        <Button
-            android:id="@+id/mainmenu_button3"
-            android:text="@string/mainmenu_button3"
-            android:textColor="@android:color/white"
-            android:layout_height="50dp"
-            android:layout_width="match_parent">
-        </Button>
-
-        <Button
-            android:id="@+id/mainmenu_button4"
-            android:text="@string/mainmenu_button4"
-            android:textColor="@android:color/white"
-            android:layout_height="50dp"
-            android:layout_width="match_parent">
-        </Button>
-
-        <Button
             android:id="@+id/mainmenu_button5"
             android:text="@string/mainmenu_button5"
+            android:textColor="@android:color/white"
+            android:layout_height="50dp"
+            android:layout_width="match_parent">dddd
+        </Button>
+
+        <Button
+            android:id="@+id/mainmenu_button6"
+            android:text="@string/mainmenu_button6"
             android:textColor="@android:color/white"
             android:layout_height="50dp"
             android:layout_width="match_parent">dddd
