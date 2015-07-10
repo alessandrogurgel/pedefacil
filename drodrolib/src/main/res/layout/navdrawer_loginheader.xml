@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:text="Your app idea"
+            android:text="Pede Fácil"
             android:textColor="#FFFFFFFF"
             android:gravity="center"
             android:visibility="visible"/>
@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAppearance="@style/TextAppearance.AppCompat.Small"
-            android:text="Amazing bootstrap"
+            android:text="serviço e pagamento ágeis"
             android:textColor="#EEEEEEEE"
             android:layout_below="@id/nadrawer_loginheader_title"
             android:gravity="center"
