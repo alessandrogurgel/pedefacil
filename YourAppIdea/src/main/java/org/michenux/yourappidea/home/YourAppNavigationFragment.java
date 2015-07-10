@@ -16,11 +16,9 @@ import org.michenux.drodrolib.ui.navdrawer.items.NavMenuLoginHeader;
 import org.michenux.drodrolib.ui.navdrawer.items.NavMenuSection;
 import org.michenux.yourappidea.NavigationController;
 import org.michenux.yourappidea.R;
-import org.michenux.yourappidea.airport.AirportListFragment;
 import org.michenux.yourappidea.aroundme.AroundMeFragment;
 import org.michenux.yourappidea.donations.DonateFragment;
 import org.michenux.yourappidea.facebook.FbLoginDelegate;
-import org.michenux.yourappidea.friends.FriendMainFragment;
 import org.michenux.yourappidea.map.SimpleMapFragment;
 import org.michenux.yourappidea.restaurante.RestauranteMainFragment;
 import org.michenux.yourappidea.tutorial.TutorialListFragment;
@@ -80,18 +78,19 @@ public class YourAppNavigationFragment extends NavigationDrawerFragment {
 
         NavMenuBuilder primaryMenuBuilder = new NavMenuBuilder()
                 .addDrawerItem(mHeaderDrawerItem)
-                .addLabelWithIcon(104, R.string.navdrawer_tutorial, R.drawable.navdrawer_tutorial_selector, true, true)
-                .addLabelWithIcon(101, R.string.navdrawer_listdetail, R.drawable.navdrawer_friends_selector, true, true)
-                .addLabelWithIcon(102, R.string.navdrawer_airport, R.drawable.navdrawer_airport_selector, true, true)
-                .addLabelWithIcon(103, R.string.navdrawer_simplemap, R.drawable.navdrawer_map_selector, true, true)
-                .addLabelWithIcon(105, R.string.navdrawer_aroundme, R.drawable.navdrawer_aroundme_selector, true, true)
-                .addLabelWithIcon(106, R.string.navdrawer_restaurante, R.drawable.navdrawer_restaurante_selector, true, true)
+                .addLabelWithIcon(101, R.string.navdrawer_cardapio, R.drawable.navdrawer_cardapio_selector, true, true)
+                .addLabelWithIcon(102, R.string.navdrawer_conta, R.drawable.navdrawer_conta_selector, true, true)
+                .addLabelWithIcon(103, R.string.navdrawer_sugestoes, R.drawable.navdrawer_sugestoes_selector, true, true)
+                .addLabelWithIcon(104, R.string.navdrawer_favoritos, R.drawable.navdrawer_favoritos_selector, true, true)
+                .addLabelWithIcon(105, R.string.navdrawer_chamar_atendente, R.drawable.navdrawer_chamar_atendente_selector, true, true)
                 .addDivider(199)
-                .addLabelWithIcon(201, R.string.navdrawer_settings, R.drawable.navdrawer_settings_selector, true, true)
-                .addLabelWithIcon(202, R.string.navdrawer_rating, R.drawable.navdrawer_ratings, false, false)
-                .addLabelWithIcon(203, R.string.navdrawer_donations, R.drawable.navdrawer_donations_selector, true, true)
-                .addLabelWithIcon(204, R.string.navdrawer_changelog, R.drawable.navdrawer_changelog_selector, false, false)
-                .addLabelWithIcon(205, R.string.navdrawer_eula, R.drawable.navdrawer_eula_selector, false, false);
+                .addLabelWithIcon(201, R.string.navdrawer_avaliações, R.drawable.navdrawer_avaliacoes_selector, true, true)
+                .addLabelWithIcon(202, R.string.navdrawer_historico, R.drawable.navdrawer_historico_selector, true, true)
+                .addLabelWithIcon(203, R.string.navdrawer_configuracoes, R.drawable.navdrawer_configuracoes_selector, true, true)
+                .addLabelWithIcon(204, R.string.navdrawer_redes_sociais, R.drawable.navdrawer_redes_sociais_selector, true, true)
+                .addDivider(199)
+                .addLabelWithIcon(301, R.string.navdrawer_ajuda, R.drawable.navdrawer_ajuda_selector, false, false)
+                .addLabelWithIcon(302, R.string.navdrawer_sobre, R.drawable.navdrawer_sobre_selector, false, false);
         mPrimaryMenu = primaryMenuBuilder.build();
 
         NavMenuBuilder secondaryMenuBuilder = new NavMenuBuilder()
@@ -146,71 +145,39 @@ public class YourAppNavigationFragment extends NavigationDrawerFragment {
     protected void onNavItemSelected(int id) {
         switch (id) {
             case 101:
-                FriendMainFragment fg = new FriendMainFragment();
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, fg)
-                        .commit();
-                break;
-            case 102:
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, new AirportListFragment())
-                        .commit();
-                break;
-            case 103:
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, new SimpleMapFragment())
-                        .commit();
-                break;
-            case 104:
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, new TutorialListFragment())
-                        .commit();
-                break;
-            case 105:
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, new AroundMeFragment())
-                        .commit();
-                break;
-            case 106:
                 getFragmentManager().beginTransaction()
                         .replace(R.id.content_frame, new RestauranteMainFragment())
                         .commit();
                 break;
+            case 102:
+                //TODO historico de pedidos
+                break;
+            case 103:
+               // TODO sugestoes
+                break;
+            case 104:
+                // TODO favoritos
+                break;
+            case 105:
+                // TODO chamar atendente
+                break;
             case 201:
-                this.navController.showSettings(this.getActivity());
+                // TODO avaliacoes
                 break;
             case 202:
-                this.navController.startAppRating(this.getActivity());
+                // TODO rate this app
                 break;
             case 203:
-                getFragmentManager().beginTransaction()
-                        .replace(R.id.content_frame, new DonateFragment())
-                        .commit();
+                // TODO configuracoes
                 break;
             case 204:
-                this.navController.showChangeLog(this.getActivity());
+                // TODO redes sociais
                 break;
-            case 205:
-                this.navController.showEula(this.getActivity());
+            case 301:
+                // TODO configuracoes
                 break;
-
-            case 260:
-                if ( mUserHelper.getCurrentUser() == null ) {
-                    this.navController.showLogin(this.getActivity());
-                }
-                break;
-            case 270:
-                if ( mUserHelper.getCurrentUser() != null ) {
-                    switch (mUserHelper.getCurrentUser().getProvider()) {
-                        case FbLoginDelegate.PROVIDER_NAME:
-                            ((YourAppMainActivity)this.getActivity()).getFbLoginDelegate().logout();
-                            break;
-                        case GoogleApiClientDelegate.PROVIDER_NAME:
-                            ((YourAppMainActivity)this.getActivity()).getGoogleApiClientDlg().signOut();
-                            break;
-                    }
-                }
-
+            case 302:
+                // TODO sobre
                 break;
         }
     }

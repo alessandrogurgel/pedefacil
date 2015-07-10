@@ -6,8 +6,18 @@
     <string name="navdrawer_airport">Airport</string>
     <string name="navdrawer_simplemap">Simple map</string>
     <string name="navdrawer_aroundme">Around me</string>
-    <string name="navdrawer_tutorial">Tutorials</string>
-    <string name="navdrawer_restaurante">Restaurante</string>
+
+    <string name="navdrawer_sugestoes">Pratos do Dia</string>
+    <string name="navdrawer_historico">Histórico de Pedidos</string>
+    <string name="navdrawer_cardapio">Cardápio</string>
+    <string name="navdrawer_favoritos">Favoritos</string>
+    <string name="navdrawer_conta">Conta</string>
+    <string name="navdrawer_ajuda">Ajuda</string>
+    <string name="navdrawer_chamar_atendente">Chamar Atendente</string>
+    <string name="navdrawer_configuracoes">Configurações</string>
+    <string name="navdrawer_redes_sociais">Redes Sociais</string>
+    <string name="navdrawer_avaliações">Avaliações</string>
+    <string name="navdrawer_sobre">Sobre</string>
 
     <string name="navdrawer_logout">Logout</string>
 

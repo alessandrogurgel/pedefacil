@@ -47,7 +47,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         NavigationDrawerFragment fragment = ((YourAppMainActivity)this.getActivity()).findNavDrawerFragment();
         switch (v.getId()) {
             case R.id.mainmenu_button6:
-                fragment.selectItem(6, false);
+                fragment.selectItem(1, false);
                 break;
         }
     }
