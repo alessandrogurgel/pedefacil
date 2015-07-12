@@ -13,10 +13,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.michenux.drodrolib.resources.ResourceUtils;
+import org.michenux.drodrolib.ui.navdrawer.NavigationDrawerFragment;
 import org.michenux.yourappidea.R;
 import org.michenux.yourappidea.aroundme.AroundMeFragment;
 import org.michenux.yourappidea.friends.FriendListFragment;
+import org.michenux.yourappidea.friends.FriendMainFragment;
+import org.michenux.yourappidea.home.YourAppMainActivity;
 import org.michenux.yourappidea.restaurante.MainFragment;
+import org.michenux.yourappidea.restaurante.RestauranteMainFragment;
 
 import java.util.List;
 
@@ -62,15 +66,18 @@ public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
 
         Context context = getContext();
 
-        final FragmentManager manager = fg.getParentFragment().getChildFragmentManager();
-//        final FragmentManager manager =((FragmentActivity)context).getSupportFragmentManager();
+//        final FragmentManager manager = fg.getParentFragment().getChildFragmentManager();
+        final FragmentManager manager =((FragmentActivity)context).getSupportFragmentManager();
+
 
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                FragmentTransaction transaction = manager.beginTransaction();
-//                transaction.replace(R.id.cardapio_content_frame, new FriendListFragment());
-//                transaction.commit();
+
+                //TODO inserir informacao de cardapio selecionado
+                manager.beginTransaction()
+                        .replace(R.id.content_frame, new FriendMainFragment())
+                        .commit();
             }
         });
 

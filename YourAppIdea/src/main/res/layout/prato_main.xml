@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/prato_content_frame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="0dp"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:scrollHorizontally="false"
+            android:layout_gravity="top">
+
+            <LinearLayout
+                android:id="@+id/layout_prato_header"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top">
+
+                <ImageView
+                    android:id="@+id/prato_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dip"
+                    android:padding="0dip"
+                    android:src="@drawable/pic01"/>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingRight="10dip"
+                android:paddingLeft="10dip"
+                android:layout_marginBottom="5dip"
+                android:layout_below="@+id/layout_prato_header">
+
+                <ImageView
+                    android:id="@+id/prato_category_icon"
+                    android:src="@drawable/category_prawn"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_toRightOf="@+id/prato_category_icon"
+                    android:layout_centerInParent="true"
+                    >
+                    <TextView
+                        android:id="@+id/prato_name"
+                        android:text="Crab Cake"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="14dip"
+                        android:textColor="#000000"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/prato_category"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="14dip"
+                        android:textColor="#AAAAAA"
+                        android:textSize="14sp"
+                        android:text="Frutos do Mar"
+                        android:layout_marginTop="-5dp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/prato_price"
+                    android:layout_width="wrap_content"
+                    android:textSize="10pt"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:text="R$123.00"
+                    />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</FrameLayout>

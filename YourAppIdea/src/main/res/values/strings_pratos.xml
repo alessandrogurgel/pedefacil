@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prato_info_title">Ajuda</string>
+    <string-array name="prato_info_details">
+        <item>- Realize o pedido do prato selecionado</item>
+        <item>- Selecione a quantidade desejada</item>
+        <item>- Consulte os itens opcionais do prato na aba Opcionais</item>
+    </string-array>
+</resources>

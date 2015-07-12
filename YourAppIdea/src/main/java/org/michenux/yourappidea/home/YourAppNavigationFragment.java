@@ -3,7 +3,6 @@ package org.michenux.yourappidea.home;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import org.michenux.drodrolib.gms.gplus.GoogleApiClientDelegate;
 import org.michenux.drodrolib.security.UserHelper;
 import org.michenux.drodrolib.ui.navdrawer.NavDrawerActivityConfiguration;
 import org.michenux.drodrolib.ui.navdrawer.NavDrawerItem;
@@ -16,12 +15,8 @@ import org.michenux.drodrolib.ui.navdrawer.items.NavMenuLoginHeader;
 import org.michenux.drodrolib.ui.navdrawer.items.NavMenuSection;
 import org.michenux.yourappidea.NavigationController;
 import org.michenux.yourappidea.R;
-import org.michenux.yourappidea.aroundme.AroundMeFragment;
-import org.michenux.yourappidea.donations.DonateFragment;
-import org.michenux.yourappidea.facebook.FbLoginDelegate;
-import org.michenux.yourappidea.map.SimpleMapFragment;
+import org.michenux.yourappidea.friends.FriendMainFragment;
 import org.michenux.yourappidea.restaurante.RestauranteMainFragment;
-import org.michenux.yourappidea.tutorial.TutorialListFragment;
 
 import java.util.List;
 
@@ -151,6 +146,9 @@ public class YourAppNavigationFragment extends NavigationDrawerFragment {
                 break;
             case 102:
                 //TODO historico de pedidos
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.content_frame, new FriendMainFragment())
+                        .commit();
                 break;
             case 103:
                // TODO sugestoes
