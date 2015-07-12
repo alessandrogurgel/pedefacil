@@ -1,10 +1,10 @@
 package org.michenux.yourappidea.restaurante.cardapio;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,14 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.michenux.drodrolib.resources.ResourceUtils;
-import org.michenux.drodrolib.ui.navdrawer.NavigationDrawerFragment;
 import org.michenux.yourappidea.R;
-import org.michenux.yourappidea.aroundme.AroundMeFragment;
-import org.michenux.yourappidea.friends.FriendListFragment;
-import org.michenux.yourappidea.friends.FriendMainFragment;
-import org.michenux.yourappidea.home.YourAppMainActivity;
-import org.michenux.yourappidea.restaurante.MainFragment;
-import org.michenux.yourappidea.restaurante.RestauranteMainFragment;
+import org.michenux.yourappidea.restaurante.RestauranteConstants;
 import org.michenux.yourappidea.restaurante.prato.PratoMainFragment;
 
 import java.util.List;
@@ -50,7 +44,7 @@ public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
 
         name.setText(cardapioItem.getName());
         category.setText(cardapioItem.getCategoy());
-        price.setText(String.format("R$ %s", Double.toString(cardapioItem.getPrice())));
+        price.setText(String.format("R$ %.2f", cardapioItem.getPrice()));
     }
 
     @Override
@@ -75,9 +69,14 @@ public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
             @Override
             public void onClick(View v) {
 
-                //TODO inserir informacao de cardapio selecionado
+                PratoMainFragment fragment = new PratoMainFragment();
+                Bundle bundle = new Bundle();
+
+                bundle.putInt(RestauranteConstants.KEY_CARDAPIO_ITEM_ID, cardapioItem.getId());
+                fragment.setArguments(bundle);
                 manager.beginTransaction()
-                        .replace(R.id.content_frame, new PratoMainFragment())
+                        .replace(R.id.content_frame,
+                                fragment)
                         .commit();
             }
         });

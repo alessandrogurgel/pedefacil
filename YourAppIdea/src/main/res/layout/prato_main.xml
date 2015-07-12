@@ -29,9 +29,9 @@
 
                 <ImageView
                     android:id="@+id/prato_picture"
-                    android:layout_width="match_parent"
-                    android:layout_height="185dip"
-                    android:padding="0dip"
+                    android:layout_width="fill_parent"
+                    android:scaleType="fitXY"
+                    android:layout_height="200dip"
                     android:src="@drawable/pic01"/>
 
             </LinearLayout>
@@ -46,7 +46,7 @@
                 android:layout_below="@+id/layout_prato_header">
 
                 <ImageView
-                    android:id="@+id/prato_category_icon"
+                    android:id="@+id/prato_category_picture"
                     android:src="@drawable/category_prawn"
                     android:layout_width="24dp"
                     android:layout_height="24dp"
@@ -57,7 +57,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_toRightOf="@+id/prato_category_icon"
+                    android:layout_toRightOf="@+id/prato_category_picture"
                     android:layout_centerInParent="true"
                     >
                     <TextView
@@ -146,7 +146,7 @@
                     style="@style/Material.Widget.Spinner.Light"
                     android:id="@+id/prato_pedido_quantidade"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:minWidth="70dp"
 
                     app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
@@ -163,7 +163,7 @@
                     style="@style/Material.Widget.EditText.Light"
                     android:id="@+id/prato_pedido_total"
                     android:layout_width="70dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="30dp"
                     android:layout_marginLeft="10dp"
                     android:textColor="#FF000000"
                     android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
@@ -181,7 +181,7 @@
                     style="@style/RaiseWaveColorButtonRippleStyle"
                     android:id="@+id/prato_adicionar_pedido"
                     android:layout_width="0dp"
-                    android:layout_height="26dp"
+                    android:layout_height="30dp"
                     android:layout_weight="0.4"
                     android:layout_marginTop="5dp"
                     android:layout_marginLeft="10dp"
@@ -230,7 +230,7 @@
                         android:text="  opções  " />
 
                 </RelativeLayout>
-                
+
                 <EditText
                     android:id="@+id/prato_observacoes"
                     android:layout_width="match_parent"
