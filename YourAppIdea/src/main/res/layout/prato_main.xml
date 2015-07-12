@@ -38,6 +38,7 @@
             </LinearLayout>
 
             <RelativeLayout
+                android:id="@+id/layout_prato_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingRight="10dip"
@@ -93,7 +94,37 @@
 
             </RelativeLayout>
 
+            <ImageView
+                android:id="@+id/prato_separator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/linha_pontilhada"
+                android:layout_below="@+id/layout_prato_name" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingRight="14dip"
+                android:paddingLeft="14dip"
+                android:orientation="vertical"
+                android:layout_below="@+id/prato_separator">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A green surig of coriander on a sumptious slice of crab meat delight."
+                    android:maxLines="3"
+                    android:layout_marginBottom="5dp"
+                    android:scrollbars="vertical"
+                    android:layout_gravity="left"/>
+
+            </LinearLayout>
+
         </RelativeLayout>
+
+
 
     </ScrollView>
 

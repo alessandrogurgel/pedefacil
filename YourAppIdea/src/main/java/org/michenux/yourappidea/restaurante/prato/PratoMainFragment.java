@@ -31,19 +31,19 @@ public class PratoMainFragment extends Fragment
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.friends, container, false);
+        View view = inflater.inflate(R.layout.prato_main, container, false);
 
-        MasterDetailFragments currentFragments = MasterDetailFragmentHelper
-                .getCurrentFragments(R.id.friendmain_fragment,
-                        R.id.frienddetail_fragment, FriendDetailFragment.class,
-                        getChildFragmentManager());
-        if ( currentFragments.master == null ) {
-            currentFragments.master = FriendListFragment.newInstance();
-        }
-
-
-        MasterDetailFragmentHelper.initFragments(currentFragments, R.id.friendmain_fragment,
-                R.id.frienddetail_fragment, getResources().getConfiguration(), getChildFragmentManager());
+//        MasterDetailFragments currentFragments = MasterDetailFragmentHelper
+//                .getCurrentFragments(R.id.friendmain_fragment,
+//                        R.id.frienddetail_fragment, FriendDetailFragment.class,
+//                        getChildFragmentManager());
+//        if ( currentFragments.master == null ) {
+//            currentFragments.master = FriendListFragment.newInstance();
+//        }
+//
+//
+//        MasterDetailFragmentHelper.initFragments(currentFragments, R.id.friendmain_fragment,
+//                R.id.frienddetail_fragment, getResources().getConfiguration(), getChildFragmentManager());
 
 
         return view ;

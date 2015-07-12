@@ -21,6 +21,7 @@ import org.michenux.yourappidea.friends.FriendMainFragment;
 import org.michenux.yourappidea.home.YourAppMainActivity;
 import org.michenux.yourappidea.restaurante.MainFragment;
 import org.michenux.yourappidea.restaurante.RestauranteMainFragment;
+import org.michenux.yourappidea.restaurante.prato.PratoMainFragment;
 
 import java.util.List;
 
@@ -76,7 +77,7 @@ public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
 
                 //TODO inserir informacao de cardapio selecionado
                 manager.beginTransaction()
-                        .replace(R.id.content_frame, new FriendMainFragment())
+                        .replace(R.id.content_frame, new PratoMainFragment())
                         .commit();
             }
         });
