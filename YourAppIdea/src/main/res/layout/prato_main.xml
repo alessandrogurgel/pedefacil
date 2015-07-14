@@ -142,58 +142,72 @@
                 android:paddingLeft="10dip"
                 android:layout_below="@+id/prato_separator_pedido"
                 >
-                <com.rey.material.widget.Spinner
-                    style="@style/Material.Widget.Spinner.Light"
-                    android:id="@+id/prato_pedido_quantidade"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:minWidth="70dp"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                    app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
-                    app:rd_enable="true"
-                    app:rd_delayClick="none"
-                    app:spn_labelEnable="true"
-                    app:spn_label="Quantidade"
-                    app:spn_arrowSwitchMode="true"
-                    app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
-                    app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"/>
+                    <com.rey.material.widget.EditText
+                        style="@style/Material.Widget.EditText.Light"
+                        android:id="@+id/prato_pedido_unit_price"
+                        android:layout_alignParentLeft="true"
+                        android:layout_width="70dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_height="40dp"
+                        android:textColor="#FF000000"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:inputType="text"
+                        android:hint="Valor"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:text="R$123.00"
+                        app:et_inputId="@+id/textfield_et_label_input"
+                        app:et_supportMode="none" />
+
+                    <com.rey.material.widget.Spinner
+                        style="@style/Material.Widget.Spinner.Light"
+                        android:id="@+id/prato_pedido_quantidade"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:minWidth="70dp"
+                        android:layout_centerHorizontal="true"
+                        app:rd_style="@style/Material.Drawable.Ripple.Wave.Light"
+                        app:rd_enable="true"
+                        app:rd_delayClick="none"
+                        app:spn_labelEnable="true"
+                        app:spn_label="Quantidade"
+                        app:spn_arrowSwitchMode="true"
+                        app:spn_arrowAnimDuration="@android:integer/config_shortAnimTime"
+                        app:spn_arrowInterpolator="@android:anim/decelerate_interpolator"/>
 
 
-                <com.rey.material.widget.EditText
-                    style="@style/Material.Widget.EditText.Light"
-                    android:id="@+id/prato_pedido_total"
-                    android:layout_width="70dp"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="#FF000000"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
-                    android:inputType="text"
-                    android:hint="Total"
-                    android:clickable="false"
-                    android:cursorVisible="false"
-                    android:focusable="false"
-                    android:focusableInTouchMode="false"
-                    android:text="R$123.00"
-                    app:et_inputId="@+id/textfield_et_label_input"
-                    app:et_supportMode="none" />
+                    <com.rey.material.widget.EditText
+                        style="@style/Material.Widget.EditText.Light"
+                        android:id="@+id/prato_pedido_total"
+                        android:layout_width="70dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:textColor="#FF000000"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+                        android:inputType="text"
+                        android:hint="Total"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:text="R$123.00"
+                        app:et_inputId="@+id/textfield_et_label_input"
+                        app:et_supportMode="none" />
 
-                <com.rey.material.widget.Button
-                    style="@style/RaiseWaveColorButtonRippleStyle"
-                    android:id="@+id/prato_adicionar_pedido"
-                    android:layout_width="0dp"
-                    android:layout_height="30dp"
-                    android:layout_weight="0.4"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:textColor="#FFFFFFFF"
-                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
-                    android:text="Adicionar"
-                    app:rd_delayClick="afterRelease"/>
+                </RelativeLayout>
+
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/layout_prato_observacoes"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingTop="10dp"
@@ -219,7 +233,7 @@
                     <TextView
                         android:id="@+id/button_prato_opcoes"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="20dp"
                         android:editable="false"
                         android:background="@drawable/bg_bt_raise_color"
                         android:textSize="12dp"
@@ -235,12 +249,30 @@
                     android:id="@+id/prato_observacoes"
                     android:layout_width="match_parent"
                     android:layout_marginTop="5dp"
-                    android:layout_height="60dp"
+                    android:layout_height="65dp"
                     android:hint=""
                     android:inputType="textMultiLine" />
 
+            </LinearLayout>
 
-
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_below="@+id/layout_prato_observacoes">
+                <com.rey.material.widget.Button
+                    style="@style/RaiseWaveColorButtonRippleStyle"
+                    android:id="@+id/prato_adicionar_pedido"
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="0.4"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:textColor="#FFFFFFFF"
+                    android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+                    android:text="Adicionar"
+                    app:rd_delayClick="afterRelease"/>
             </LinearLayout>
 
 

@@ -73,6 +73,8 @@ public class PratoMainFragment extends Fragment
         final EditText total = (EditText) view.findViewById(R.id.prato_pedido_total);
         total.setText(price.getText());
 
+        final EditText unit_price = (EditText) view.findViewById(R.id.prato_pedido_unit_price);
+        unit_price.setText(price.getText());
 
         quantitySpinner.setOnItemClickListener(new Spinner.OnItemClickListener() {
             @Override
