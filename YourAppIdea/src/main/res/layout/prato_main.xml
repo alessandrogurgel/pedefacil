@@ -213,6 +213,7 @@
                 android:paddingTop="10dp"
                 android:paddingRight="10dip"
                 android:paddingLeft="10dip"
+                android:layout_marginTop="5dip"
                 android:orientation="vertical"
                 android:layout_below="@+id/layout_prato_pedido"
                 >
@@ -230,18 +231,15 @@
                         android:layout_alignParentLeft="true"
                         android:text="Observações" />
 
-                    <TextView
+                    <com.rey.material.widget.Button
+                        style="@style/RaiseButtonRippleStyle"
                         android:id="@+id/button_prato_opcoes"
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
-                        android:editable="false"
                         android:background="@drawable/bg_bt_raise_color"
-                        android:textSize="12dp"
                         android:textColor="@color/white"
-                        android:layout_gravity="right"
-                        android:layout_marginRight="10dp"
                         android:layout_alignParentRight="true"
-                        android:text="  opções  " />
+                        android:text="  Opções  " />
 
                 </RelativeLayout>
 

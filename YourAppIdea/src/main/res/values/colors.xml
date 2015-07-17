@@ -15,7 +15,13 @@
     <color name="primary">#3F51B5</color>
     <color name="primary_dark">#303F9F</color>
     <color name="primary_light">#C5CAE9</color>
-    <color name="accent">#FF4081</color>
+    <color name="accent">#2196f3</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryLight">#C5CAE9</color>
+    <color name="colorAccent">#2196f3</color>
+
     <color name="price_color">#FFA441</color>
     <color name="primary_text">#212121</color>
     <color name="secondary_text">#727272</color>
@@ -23,6 +29,8 @@
     <color name="white">#FFFFFF</color>
     <color name="icons">#FFFFFF</color>
     <color name="divider">#B6B6B6</color>
+    <color name="disable_color">#B6B6B6</color>
+
 
     <color name="frutos_do_mar">#f39c12</color>
     <color name="dessert">#1DC697</color>

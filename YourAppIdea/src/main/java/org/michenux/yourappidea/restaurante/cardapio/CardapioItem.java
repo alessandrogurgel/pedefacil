@@ -1,22 +1,38 @@
 package org.michenux.yourappidea.restaurante.cardapio;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by alessandro.gurgel on 7/6/15.
  */
 public class CardapioItem {
 
-    public CardapioItem(int id, String name, String imageName, String description, double price, String categoy ) {
+    public CardapioItem(int id, String name, String imageName, String description, double price, String category, List<Opcional> opcionais ) {
         this.name = name;
-        this.categoy = categoy;
+        this.category = category;
         this.price = price;
         this.imageName = imageName;
         this.description = description;
         this.id = id;
+        this.opcionais = opcionais;
     }
+
+    public CardapioItem(int id, String name, String imageName, String description, double price, String category ) {
+        this.name = name;
+        this.category = category;
+        this.price = price;
+        this.imageName = imageName;
+        this.description = description;
+        this.id = id;
+        this.opcionais = new ArrayList<Opcional>();
+    }
+
+    private List<Opcional> opcionais;
 
     private String name;
 
-    private String categoy;
+    private String category;
 
     private double price;
 
@@ -25,6 +41,24 @@ public class CardapioItem {
     private String description;
 
     private int id;
+
+    public List<Opcional> getOpcionais() {
+        return opcionais;
+    }
+
+    public String[] getOpcionaisTextos() {
+        String[] result = new String[opcionais.size()];
+        int i = 0;
+        for (Opcional o : opcionais)
+        {
+            result[i++] = o.getOpcao();
+        }
+        return result;
+    }
+
+    public void setOpcionais(List<Opcional> opcionais) {
+        this.opcionais = opcionais;
+    }
 
     public String getDescription() {
         return description;
@@ -50,12 +84,12 @@ public class CardapioItem {
         this.name = name;
     }
 
-    public String getCategoy() {
-        return categoy;
+    public String getCategory() {
+        return category;
     }
 
-    public void setCategoy(String categoy) {
-        this.categoy = categoy;
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public double getPrice() {

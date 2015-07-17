@@ -1,7 +1,9 @@
 package org.michenux.yourappidea.restaurante.prato;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.rey.material.app.DialogFragment;
+import com.rey.material.app.SimpleDialog;
 import com.rey.material.widget.EditText;
 import com.rey.material.widget.Spinner;
 
@@ -22,6 +26,7 @@ import org.michenux.yourappidea.restaurante.CategoryContentProvider;
 import org.michenux.yourappidea.restaurante.RestauranteConstants;
 import org.michenux.yourappidea.restaurante.cardapio.CardapioContentProvider;
 import org.michenux.yourappidea.restaurante.cardapio.CardapioItem;
+import android.widget.Toast;
 
 /**
  * Created by alessandro.gurgel on 7/11/15.
@@ -54,7 +59,7 @@ public class PratoMainFragment extends Fragment
         price.setText(String.format("R$ %.2f", cardapioItem.getPrice()));
 
         TextView category = (TextView) view.findViewById(R.id.prato_category);
-        category.setText(cardapioItem.getCategoy());
+        category.setText(cardapioItem.getCategory());
 
         ImageView picture = (ImageView) view.findViewById(R.id.prato_picture);
         picture.setImageDrawable(ResourceUtils.getDrawableByName(
@@ -85,7 +90,60 @@ public class PratoMainFragment extends Fragment
             }
         });
         ImageView categoryPicture = (ImageView) view.findViewById(R.id.prato_category_picture);
-        categoryPicture.setImageDrawable(ResourceUtils.getDrawableByName(CategoryContentProvider.getInstance().getImageFromCategory(cardapioItem.getCategoy()), getActivity()));
+        categoryPicture.setImageDrawable(ResourceUtils.getDrawableByName(CategoryContentProvider.getInstance().getImageFromCategory(cardapioItem.getCategory()), getActivity()));
+
+        com.rey.material.widget.Button opcoesButton = (com.rey.material.widget.Button)view.findViewById(R.id.button_prato_opcoes);
+
+        if (cardapioItem.getOpcionais().isEmpty() ) {
+            opcoesButton.setEnabled(false);
+            opcoesButton.setBackgroundColor(getResources().getColor(R.color.disable_color));
+            opcoesButton.setTextColor(getResources().getColor(R.color.secondary_text));
+        }
+        else{
+            opcoesButton.setEnabled(true);
+        }
+
+        final android.widget.EditText optionsText = (android.widget.EditText)view.findViewById(R.id.prato_observacoes);
+
+        final Activity mActivity = getActivity();
+
+        opcoesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                SimpleDialog.Builder builder = new SimpleDialog.Builder(R.style.Material_App_Dialog_Simple_Light) {
+                    @Override
+                    public void onPositiveActionClicked(DialogFragment fragment) {
+                        CharSequence[] values = getSelectedValues();
+                        String opcionais = TextUtils.join(", ", values);
+                        if (optionsText.getText().length() > 0) {
+                            optionsText.setText(optionsText.getText() + "\n" + opcionais);
+                        } else {
+                            optionsText.setText(opcionais);
+                        }
+
+                        super.onPositiveActionClicked(fragment);
+                    }
+
+
+
+                    @Override
+                    public void onNegativeActionClicked(DialogFragment fragment) {
+                        super.onNegativeActionClicked(fragment);
+                    }
+                };
+
+                builder.multiChoiceItems(cardapioItem.getOpcionaisTextos())
+                        .title("Opcionais")
+                        .positiveAction("OK")
+                        .negativeAction("CANCELAR");
+
+                DialogFragment fragment = DialogFragment.newInstance(builder);
+                fragment.show(getFragmentManager(), null);
+            }
+        });
+
+
         return view ;
     }
 

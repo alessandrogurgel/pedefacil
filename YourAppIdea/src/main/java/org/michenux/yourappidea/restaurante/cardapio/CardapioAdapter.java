@@ -43,7 +43,7 @@ public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
                 cardapioItem.getImageName(), this.getContext()));
 
         name.setText(cardapioItem.getName());
-        category.setText(cardapioItem.getCategoy());
+        category.setText(cardapioItem.getCategory());
         price.setText(String.format("R$ %.2f", cardapioItem.getPrice()));
     }
 
