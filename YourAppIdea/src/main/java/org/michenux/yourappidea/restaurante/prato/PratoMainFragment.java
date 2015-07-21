@@ -21,11 +21,15 @@ import com.rey.material.widget.EditText;
 import com.rey.material.widget.Spinner;
 
 import org.michenux.drodrolib.resources.ResourceUtils;
+import org.michenux.drodrolib.ui.navdrawer.NavigationDrawerFragment;
 import org.michenux.yourappidea.R;
+import org.michenux.yourappidea.home.YourAppMainActivity;
 import org.michenux.yourappidea.restaurante.CategoryContentProvider;
 import org.michenux.yourappidea.restaurante.RestauranteConstants;
 import org.michenux.yourappidea.restaurante.cardapio.CardapioContentProvider;
 import org.michenux.yourappidea.restaurante.cardapio.CardapioItem;
+import org.michenux.yourappidea.restaurante.pedido.PedidoAbertoManager;
+
 import android.widget.Toast;
 
 /**
@@ -65,7 +69,7 @@ public class PratoMainFragment extends Fragment
         picture.setImageDrawable(ResourceUtils.getDrawableByName(
                 cardapioItem.getImageName(), getActivity()));
 
-        Spinner quantitySpinner = (Spinner) view.findViewById(R.id.prato_pedido_quantidade);
+        final Spinner quantitySpinner = (Spinner) view.findViewById(R.id.prato_pedido_quantidade);
         String[] items = new String[10];
         for  (int i = 0; i < 10; i++)
         {
@@ -126,7 +130,6 @@ public class PratoMainFragment extends Fragment
                     }
 
 
-
                     @Override
                     public void onNegativeActionClicked(DialogFragment fragment) {
                         super.onNegativeActionClicked(fragment);
@@ -143,6 +146,18 @@ public class PratoMainFragment extends Fragment
             }
         });
 
+        com.rey.material.widget.Button addButton = (com.rey.material.widget.Button)view.findViewById(R.id.prato_adicionar_pedido);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Integer quantity = Integer.parseInt(quantitySpinner.getSelectedItem().toString());
+                PedidoAbertoManager.getInstance().adicionarPrato(cardapioItem, quantity);
+
+                NavigationDrawerFragment fragment = ((YourAppMainActivity)mActivity).findNavDrawerFragment();
+                fragment.selectItem(1, false);
+            }
+        });
 
         return view ;
     }
