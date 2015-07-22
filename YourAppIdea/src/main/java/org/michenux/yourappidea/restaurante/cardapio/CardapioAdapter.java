@@ -24,12 +24,9 @@ import java.util.List;
  */
 public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
 
-    private Fragment fg;
 
-    public CardapioAdapter(Context context, List<CardapioItem> cardapioItems, Fragment fg) {
+    public CardapioAdapter(Context context, List<CardapioItem> cardapioItems) {
         super(context, 0, cardapioItems);
-
-        this.fg = fg;
     }
 
     private void setCardapioItemView(CardapioItem cardapioItem, View itemView)
@@ -61,7 +58,6 @@ public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
 
         Context context = getContext();
 
-//        final FragmentManager manager = fg.getParentFragment().getChildFragmentManager();
         final FragmentManager manager =((FragmentActivity)context).getSupportFragmentManager();
 
 

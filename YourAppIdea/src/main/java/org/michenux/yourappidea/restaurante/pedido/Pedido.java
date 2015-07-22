@@ -59,4 +59,12 @@ public class Pedido {
         }
         items.add( new Pair<CardapioItem, Integer>(cardapioItem, quantity));
     }
+
+    public String getTotal() {
+        double total = 0;
+        for (Pair<CardapioItem, Integer> item : items ) {
+            total = total + (item.second * item.first.getPrice());
+        }
+        return String.format("%.2f", total);
+    }
 }

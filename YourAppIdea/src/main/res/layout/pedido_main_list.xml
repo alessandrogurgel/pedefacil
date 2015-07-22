@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+
+        <ListView android:id="@+id/pedido_items_list"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="85"
+            android:scrollbars="vertical">
+
+        </ListView>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5">
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:text="TOTAL(R$)">
+            </TextView>
+
+            <TextView
+                android:id="@+id/text_pedido_total"
+                android:layout_marginRight="5dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="129.90">
+            </TextView>
+
+
+
+        </RelativeLayout>
+
+        <com.rey.material.widget.Button
+            style="@style/RaiseWaveColorButtonRippleStyle"
+            android:id="@+id/button_confirmar_pedido"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:layout_margin="5dp"
+            android:textColor="#FFFFFFFF"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Button"
+            android:text="Confirmar"
+            app:rd_delayClick="afterRelease"/>
+
+    </LinearLayout>
+
+</FrameLayout>

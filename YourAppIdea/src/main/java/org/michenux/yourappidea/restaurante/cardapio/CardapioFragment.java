@@ -30,7 +30,7 @@ public class CardapioFragment extends Fragment
         if (BuildConfig.DEBUG) {
             Log.i(YourApplication.LOG_TAG, "CardapioFragment.onCreate");
         }
-        mCardapioAdapter = new CardapioAdapter(this.getActivity(), CardapioContentProvider.getInstance().getCardapio(), this);
+        mCardapioAdapter = new CardapioAdapter(this.getActivity(), CardapioContentProvider.getInstance().getCardapio());
     }
 
     @Override

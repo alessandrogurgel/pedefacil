@@ -4,6 +4,8 @@ import android.support.v4.util.Pair;
 
 import org.michenux.yourappidea.restaurante.cardapio.CardapioItem;
 
+import java.util.List;
+
 /**
  * Created by alessandro.gurgel on 7/21/15.
  */
@@ -29,5 +31,13 @@ public class PedidoAbertoManager
     {
        pedido.addItem(cardapioItem, quantity);
 
+    }
+
+    public List<Pair<CardapioItem, Integer>> getItems() {
+        return pedido.getItems();
+    }
+
+    public String getTotal() {
+        return pedido.getTotal();
     }
 }
