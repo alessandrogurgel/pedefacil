@@ -40,4 +40,9 @@ public class PedidoAbertoManager
     public String getTotal() {
         return pedido.getTotal();
     }
+
+
+    public void removeItem(int id) {
+        pedido.removeItem(id);
+    }
 }

@@ -67,4 +67,20 @@ public class Pedido {
         }
         return String.format("%.2f", total);
     }
+
+    public void removeItem(int id)
+    {
+        Pair<CardapioItem, Integer> toRemove = null;
+        for (Pair<CardapioItem, Integer> item : items )
+        {
+            if (item.first.getId() == item.first.getId()){
+                toRemove = item;
+                break;
+            }
+        }
+        if (toRemove != null )
+        {
+            items.remove(toRemove);
+        }
+    }
 }
