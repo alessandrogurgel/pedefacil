@@ -6,4 +6,8 @@ package org.michenux.yourappidea.restaurante;
 public interface RestauranteConstants {
 
     public static final String KEY_CARDAPIO_ITEM_ID = "cardapioId";
+    public static final String KEY_RESTAURANTE_TAB = "tabRestaurante";
+
+    public static final int TAB_NUMBER_PEDIDO = 2;
+
 }

@@ -3,6 +3,8 @@ package org.michenux.yourappidea.restaurante.prato;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -26,6 +28,7 @@ import org.michenux.yourappidea.R;
 import org.michenux.yourappidea.home.YourAppMainActivity;
 import org.michenux.yourappidea.restaurante.CategoryContentProvider;
 import org.michenux.yourappidea.restaurante.RestauranteConstants;
+import org.michenux.yourappidea.restaurante.RestauranteMainFragment;
 import org.michenux.yourappidea.restaurante.cardapio.CardapioContentProvider;
 import org.michenux.yourappidea.restaurante.cardapio.CardapioItem;
 import org.michenux.yourappidea.restaurante.pedido.PedidoAbertoManager;
@@ -147,6 +150,9 @@ public class PratoMainFragment extends Fragment
         });
 
         com.rey.material.widget.Button addButton = (com.rey.material.widget.Button)view.findViewById(R.id.prato_adicionar_pedido);
+
+        final FragmentManager manager =(getActivity()).getSupportFragmentManager();
+
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)
@@ -154,8 +160,16 @@ public class PratoMainFragment extends Fragment
                 Integer quantity = Integer.parseInt(quantitySpinner.getSelectedItem().toString());
                 PedidoAbertoManager.getInstance().adicionarPrato(cardapioItem, quantity);
 
-                NavigationDrawerFragment fragment = ((YourAppMainActivity)mActivity).findNavDrawerFragment();
-                fragment.selectItem(1, false);
+                RestauranteMainFragment fragment = new RestauranteMainFragment();
+                Bundle bundle = new Bundle();
+
+                bundle.putInt(RestauranteConstants.KEY_RESTAURANTE_TAB, RestauranteConstants.TAB_NUMBER_PEDIDO);
+                fragment.setArguments(bundle);
+                manager.beginTransaction()
+                        .replace(R.id.content_frame,
+                                fragment)
+                        .commit();
+
             }
         });
 
