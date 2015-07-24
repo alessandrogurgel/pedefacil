@@ -23,6 +23,7 @@ import org.michenux.yourappidea.BuildConfig;
 import org.michenux.yourappidea.NavigationController;
 import org.michenux.yourappidea.R;
 import org.michenux.yourappidea.YourApplication;
+import org.michenux.yourappidea.restaurante.prato.PratoMainFragment;
 
 import javax.inject.Inject;
 
@@ -89,7 +90,11 @@ public class YourAppMainActivity extends ActionBarActivity implements UserSessio
             }
             // Else, nothing in the direct fragment back stack
             else {
-                if ( currentFragment != null && !NavigationController.HOME_FRAGMENT_TAG.equals(currentFragment.getTag())) {
+                if (currentFragment instanceof PratoMainFragment)
+                {
+                    navigationDrawerFragment.selectItem(1, false);
+                }
+                else if ( currentFragment != null && !NavigationController.HOME_FRAGMENT_TAG.equals(currentFragment.getTag())) {
                     this.navController.goHomeFragment(this);
                 }
                 else {
