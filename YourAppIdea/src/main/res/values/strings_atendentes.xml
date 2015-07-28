@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="chamar_garcom_info_title">Chamar Atendente</string>
+    <string-array name="chamar_garcom_opcoes">
+        <item>Garçom</item>
+        <item>Especialista em vinhos</item>
+        <item>Especialista em culinária</item>
+        <item>Gerente</item>
+    </string-array>
+</resources>

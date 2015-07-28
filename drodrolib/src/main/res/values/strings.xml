@@ -9,5 +9,7 @@
     <string name="facebook_message_welcome">Hello\n%s</string>
 
 
+    <string name="ask">Solicitar</string>
+
     <string name="close">Close</string>
 </resources>
