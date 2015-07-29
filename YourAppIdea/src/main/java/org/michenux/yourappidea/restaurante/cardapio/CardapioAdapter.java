@@ -35,6 +35,7 @@ public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
         TextView name = (TextView) itemView.findViewById(R.id.cardapio_item_name);
         TextView category = (TextView) itemView.findViewById(R.id.cardapio_item_category);
         TextView price = (TextView) itemView.findViewById(R.id.cardapio_item_price);
+        TextView rating = (TextView) itemView.findViewById(R.id.cardapio_item_rating);
 
         picture.setImageDrawable(ResourceUtils.getDrawableByName(
                 cardapioItem.getImageName(), this.getContext()));
@@ -42,6 +43,7 @@ public class CardapioAdapter extends ArrayAdapter<CardapioItem> {
         name.setText(cardapioItem.getName());
         category.setText(cardapioItem.getCategory());
         price.setText(String.format("R$ %.2f", cardapioItem.getPrice()));
+        rating.setText(String.format("nota: %.2f", cardapioItem.getRating()));
     }
 
     @Override

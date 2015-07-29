@@ -97,6 +97,8 @@ public class PedidoFragment extends Fragment
                             PedidoAbertoManager.getInstance().enviarPedido();
                             Toast.makeText(getActivity(), "Pedido enviado para cozinha.", Toast.LENGTH_SHORT).show();
                             handleConfirmButtonText(confirmarButton);
+                            handleConfirmButtonClickEvent(confirmarButton, valorTotal, total );
+
                             super.onPositiveActionClicked(fragment);
                         }
                     };
