@@ -83,4 +83,12 @@ public class Pedido {
             items.remove(toRemove);
         }
     }
+
+    public void enviarPedido() {
+        solicitacao = new Date();
+    }
+
+    public boolean hasConta() {
+        return solicitacao != null;
+    }
 }

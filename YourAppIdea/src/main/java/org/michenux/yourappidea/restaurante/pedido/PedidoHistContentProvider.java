@@ -26,4 +26,7 @@ public class PedidoHistContentProvider
         instance = new PedidoHistContentProvider();
     }
 
+    public void adicionarPedido(Pedido pedido) {
+        pedidos.add( pedido );
+    }
 }

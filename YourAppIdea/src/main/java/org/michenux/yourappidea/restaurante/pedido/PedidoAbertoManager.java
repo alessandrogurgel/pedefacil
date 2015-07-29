@@ -4,6 +4,7 @@ import android.support.v4.util.Pair;
 
 import org.michenux.yourappidea.restaurante.cardapio.CardapioItem;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -44,5 +45,20 @@ public class PedidoAbertoManager
 
     public void removeItem(int id) {
         pedido.removeItem(id);
+    }
+
+    public void enviarPedido() {
+        pedido.enviarPedido();;
+    }
+
+    public boolean hasConta() {
+        return pedido.hasConta();
+    }
+
+    public void pagaConta()
+    {
+        pedido.setFechamento(new Date());
+        PedidoHistContentProvider.getInstance().adicionarPedido( pedido );
+        pedido = new Pedido();
     }
 }

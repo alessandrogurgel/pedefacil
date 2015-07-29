@@ -54,14 +54,16 @@ public class PedidoAdapter extends ArrayAdapter<Pair<CardapioItem, Integer>> {
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                remove(item);
-                totalList.setText(PedidoAbertoManager.getInstance().getTotal());
+                if (!PedidoAbertoManager.getInstance().hasConta()) {
+                    remove(item);
+                    totalList.setText(PedidoAbertoManager.getInstance().getTotal());
 
-                if (PedidoAbertoManager.getInstance().getItems().isEmpty())
-                {
-                    confirmarButton.setEnabled(false);
-                    confirmarButton.setBackgroundColor(resources.getColor(R.color.disable_color));
-                    confirmarButton.setTextColor(resources.getColor(R.color.secondary_text));
+                    if (PedidoAbertoManager.getInstance().getItems().isEmpty())
+                    {
+                        confirmarButton.setEnabled(false);
+                        confirmarButton.setBackgroundColor(resources.getColor(R.color.disable_color));
+                        confirmarButton.setTextColor(resources.getColor(R.color.secondary_text));
+                    }
                 }
             }
         });
