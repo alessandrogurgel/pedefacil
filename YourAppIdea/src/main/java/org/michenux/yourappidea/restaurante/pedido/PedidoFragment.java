@@ -11,14 +11,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.rey.material.app.SimpleDialog;
 import com.rey.material.app.DialogFragment;
+import com.rey.material.widget.Button;
 
 import org.michenux.yourappidea.BuildConfig;
 import org.michenux.yourappidea.R;
 import org.michenux.yourappidea.YourApplication;
-import org.michenux.yourappidea.restaurante.cardapio.CardapioAdapter;
-import org.michenux.yourappidea.restaurante.cardapio.CardapioContentProvider;
 
 /**
  * Created by alessandro.gurgel on 7/21/15.
@@ -47,11 +47,15 @@ public class PedidoFragment extends Fragment
         listView.setAdapter(pedidoAdapter);
 
         TextView total = (TextView)view.findViewById(R.id.text_pedido_total);
-        total.setText(PedidoAbertoManager.getInstance().getTotal());
+        final String valorTotal = PedidoAbertoManager.getInstance().getTotal();
+        total.setText(valorTotal);
 
         final FragmentActivity activity = getActivity();
 
-        com.rey.material.widget.Button confirmarButton = (com.rey.material.widget.Button)view.findViewById(R.id.button_confirmar_pedido);
+        final com.rey.material.widget.Button confirmarButton = (com.rey.material.widget.Button)view.findViewById(R.id.button_confirmar_pedido);
+
+        handleConfirmButtonText(confirmarButton);
+
         if (PedidoAbertoManager.getInstance().getItems().isEmpty())
         {
             confirmarButton.setEnabled(false);
@@ -59,13 +63,42 @@ public class PedidoFragment extends Fragment
             confirmarButton.setTextColor(getResources().getColor(R.color.secondary_text));
         }
         else{
+
             confirmarButton.setEnabled(true);
+            handleConfirmButtonClickEvent(confirmarButton, valorTotal, total);
+
+        }
+
+        return view;
+
+    }
+
+    private void handleConfirmButtonText(Button confirmarButton) {
+        if (PedidoAbertoManager.getInstance().hasConta())
+        {
+            confirmarButton.setText("Pagar a Conta");
+            confirmarButton.setBackgroundColor(getResources().getColor(android.R.color.holo_red_light));
+        }
+        else{
+            confirmarButton.setText("Confirmar");
+            confirmarButton.setBackground(getResources().getDrawable(R.drawable.bg_bt_raise_color));
+        }
+    }
+
+    private void handleConfirmButtonClickEvent(final Button confirmarButton, final String valorTotal, final TextView total)
+    {
+        if (!PedidoAbertoManager.getInstance().hasConta()){
             confirmarButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     SimpleDialog.Builder builder = new SimpleDialog.Builder(R.style.Material_App_Dialog_Simple_Light) {
-                        public void onPositiveActionClicked(DialogFragment fragment) {
-                            Toast.makeText(activity, "Pedido enviado para cozinha.", Toast.LENGTH_SHORT).show();
+                        public void onPositiveActionClicked(DialogFragment fragment)
+                        {
+                            PedidoAbertoManager.getInstance().enviarPedido();
+                            Toast.makeText(getActivity(), "Pedido enviado para cozinha.", Toast.LENGTH_SHORT).show();
+                            handleConfirmButtonText(confirmarButton);
+                            handleConfirmButtonClickEvent(confirmarButton, valorTotal, total );
+
                             super.onPositiveActionClicked(fragment);
                         }
                     };
@@ -77,9 +110,36 @@ public class PedidoFragment extends Fragment
                 }
             });
         }
+        else{
+            confirmarButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    MaterialDialog.Builder builder = new MaterialDialog.Builder(getActivity());
+                    builder.customView(R.layout.dialog_pagamento, true);
+                    builder.title("Pagamento").positiveText("OK").negativeText("CANCELAR");
+                    builder.callback(new MaterialDialog.ButtonCallback() {
+                        @Override
+                        public void onPositive(MaterialDialog dialog) {
+                            pedidoAdapter.clear();
+                            PedidoAbertoManager.getInstance().pagaConta();
+                            handleConfirmButtonText(confirmarButton);
+                            final String valorTotalZerado = PedidoAbertoManager.getInstance().getTotal();
+                            total.setText(valorTotalZerado);
+                            handleConfirmButtonClickEvent(confirmarButton, valorTotalZerado, total);
+                            Toast.makeText(getActivity(), "Pagamento realizado com sucesso", Toast.LENGTH_SHORT).show();
+                            super.onPositive(dialog);
+                        }
+                    });
 
-        return view;
+                    MaterialDialog dialog = builder.build();
 
+                    TextView dialogTotal = (TextView)dialog.getCustomView().findViewById(R.id.dialog_pagamento_total);
+                    dialogTotal.setText(valorTotal);
+                    dialog.show();
+                }
+            });
+
+        }
     }
 
 }

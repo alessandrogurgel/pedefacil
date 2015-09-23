@@ -8,7 +8,7 @@ import java.util.List;
  */
 public class CardapioItem {
 
-    public CardapioItem(int id, String name, String imageName, String description, double price, String category, List<Opcional> opcionais ) {
+    public CardapioItem(int id, String name, String imageName, String description, double price, String category, double rating, List<Opcional> opcionais ) {
         this.name = name;
         this.category = category;
         this.price = price;
@@ -16,9 +16,10 @@ public class CardapioItem {
         this.description = description;
         this.id = id;
         this.opcionais = opcionais;
+        this.rating = rating;
     }
 
-    public CardapioItem(int id, String name, String imageName, String description, double price, String category ) {
+    public CardapioItem(int id, String name, String imageName, String description, double price, String category , double rating) {
         this.name = name;
         this.category = category;
         this.price = price;
@@ -26,6 +27,7 @@ public class CardapioItem {
         this.description = description;
         this.id = id;
         this.opcionais = new ArrayList<Opcional>();
+        this.rating = rating;
     }
 
     private List<Opcional> opcionais;
@@ -41,6 +43,8 @@ public class CardapioItem {
     private String description;
 
     private int id;
+
+    private double rating;
 
     public List<Opcional> getOpcionais() {
         return opcionais;
@@ -106,6 +110,14 @@ public class CardapioItem {
 
     public void setImageName(String imageName) {
         this.imageName = imageName;
+    }
+
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 
 }

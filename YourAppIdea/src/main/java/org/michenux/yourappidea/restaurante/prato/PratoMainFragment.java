@@ -179,19 +179,22 @@ public class PratoMainFragment extends Fragment
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.prato_menu, menu);
+
+        MenuItem menuItem = menu.findItem(R.id.prato_rating);
+        menuItem.setTitle(String.format("%.2f", cardapioItem.getRating()));
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
 
-            case R.id.prato_menu_info:
-                new MaterialDialog.Builder(this.getActivity())
-                        .title(R.string.prato_info_title)
-                        .items(R.array.prato_info_details)
-                        .positiveText(R.string.close)
-                        .show();
-                return true;
+//            case R.id.prato_menu_info:
+//                new MaterialDialog.Builder(this.getActivity())
+//                        .title(R.string.prato_info_title)
+//                        .items(R.array.prato_info_details)
+//                        .positiveText(R.string.close)
+//                        .show();
+//                return true;
         }
         return super.onOptionsItemSelected(item);
     }
